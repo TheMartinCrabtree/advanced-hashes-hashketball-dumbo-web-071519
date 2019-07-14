@@ -82,11 +82,21 @@ def team_names
 end
 
 def player_numbers(team_name)
-  
+  game_hash.each do |teams, keys|
+    if keys[:team_name] == team_name
+      return keys[:team_name].map { |player| player[:number]}
+    end
+  end
 end
 
 def player_stats(player_info)
-
+  game_hash.each do |teams, keys|
+    keys[:players].each do |player|
+      if player[:player_name] == player_info
+        return player.delete_if { |stat, value| [:player_name].include?(stat)}
+      end
+    end
+  end
 end
 
 
