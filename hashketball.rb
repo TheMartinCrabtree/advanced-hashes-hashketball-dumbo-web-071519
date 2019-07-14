@@ -53,7 +53,7 @@ def num_points_scored(player_info)
     keys[:players].each do |player|
       if(player[:player_name] == player_info)
         
-        return player[:points] 
+        return player[:points].to_i  
       end
     end
   end
