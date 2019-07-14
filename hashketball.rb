@@ -52,7 +52,7 @@ def num_points_scored(player_info)
   game_hash.each do |teams, keys|
     keys[:players].each do |player|
       #if(player[:player_name] == player_info)
-      if(player[:player_name].include? == player_info)
+      if(player[:player_name].include?(player_info))
         return player[:points] 
       end
     end
